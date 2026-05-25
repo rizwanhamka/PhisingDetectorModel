@@ -1,30 +1,111 @@
+:root {
+  --bg: #0b0c0f;
+  --surface: #13151a;
+  --surface2: #1a1d23;
+  --border: #262a33;
+
+  --accent: #c8f53b;
+  --danger: #ff4d4d;
+  --success: #2ee59d;
+  --warn: #ffb020;
+
+  --text: #f2f2f2;
+  --text2: #a7abb3;
+
+  --radius: 14px;
+}
+
 body {
-  width: 300px;
-  font-family: Arial;
-  background: #111;
-  color: white;
-  padding: 15px;
+  margin: 0;
+  width: 340px;
+  font-family: "Syne", sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .container {
+  padding: 14px;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  padding: 6px 4px 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.url-card {
+  overflow: hidden;
+}
+
+.label {
+  font-size: 10px;
+  color: var(--text2);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.mono {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: #d7d7d7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-h2 {
-  margin: 0;
-  color: #00ff99;
+.details {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
 }
 
 .safe {
-  color: #00ff99;
+  color: var(--success);
+  font-weight: 600;
 }
 
 .danger {
-  color: #ff4444;
+  color: var(--danger);
+  font-weight: 600;
 }
 
 .warning {
-  color: #ffaa00;
+  color: var(--warn);
+  font-weight: 600;
+}
+
+/* subtle hover feel (biar hidup tapi tidak "AI-ish") */
+.card:hover {
+  border-color: #343a46;
+  transition: 0.2s ease;
 }

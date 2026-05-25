@@ -3,21 +3,49 @@
   <head>
     <title>Phishing Detector</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- font biar lebih modern tapi tetap natural -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="container">
-      <h2>Phishing Detector</h2>
+      <div class="header">
+        <div class="title">Phishing Detector</div>
+        <div class="subtitle">Real-time URL analysis</div>
+      </div>
 
-      <div id="url"></div>
+      <div class="card url-card">
+        <div class="label">Current URL</div>
+        <div id="url" class="value mono"></div>
+      </div>
 
-      <div id="status"></div>
+      <div class="grid">
+        <div class="card">
+          <div class="label">Status</div>
+          <div id="status" class="value"></div>
+        </div>
 
-      <div id="confidence"></div>
+        <div class="card">
+          <div class="label">Risk</div>
+          <div id="risk" class="value"></div>
+        </div>
+      </div>
 
-      <div id="risk"></div>
+      <!-- <div class="card">
+        <div class="label">Confidence</div>
+        <div id="confidence" class="value"></div>
+      </div> -->
 
-      <div id="details"></div>
+      <div class="card details-card">
+        <div class="label">Suspicious Features</div>
+        <div id="details" class="details"></div>
+      </div>
     </div>
 
     <script src="popup.js"></script>
