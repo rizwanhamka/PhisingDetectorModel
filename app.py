@@ -17,18 +17,14 @@ CORS(app)
 model = joblib.load("model.pkl")
 feature_names = joblib.load("features.pkl")
 
-# =========================================================
 # HELPERS
-# =========================================================
 
 def normalize_url(url):
     if not url.startswith(("http://", "https://")):
         url = "https://" + url
     return url
 
-# =========================================================
 # FEATURES
-# =========================================================
 
 def having_ip(url):
     hostname = urlparse(url).hostname or ""
@@ -192,9 +188,7 @@ def abnormal_url(url):
 
     return 1 if domain in url else -1
 
-# =========================================================
 # EXTRACT
-# =========================================================
 
 def extract_features(url):
 
@@ -235,9 +229,7 @@ def extract_features(url):
 
     return features
 
-# =========================================================
 # RISK OVERRIDE
-# =========================================================
 
 def hard_rule_check(url, features):
 
@@ -268,9 +260,7 @@ def hard_rule_check(url, features):
 
     return False
 
-# =========================================================
 # API
-# =========================================================
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -360,7 +350,6 @@ def predict():
             "error": str(e)
         }), 500
 
-# =========================================================
 
 @app.route("/")
 def home():
@@ -368,7 +357,6 @@ def home():
         "message": "Advanced Phishing Detector API"
     })
 
-# =========================================================
 
 if __name__ == "__main__":
     app.run(
